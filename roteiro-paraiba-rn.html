@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiro Paraíba & Rio Grande do Norte · 18–30 ago</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --areia:#f3ead8;
+    --areia-2:#eaddc4;
+    --mar:#0e6b73;
+    --mar-fundo:#0a4d54;
+    --coral:#e8623c;
+    --por-do-sol:#f2a541;
+    --tinta:#1c2321;
+    --tinta-suave:#3f4a47;
+    --branco:#fffdf8;
+    --sombra:rgba(28,35,33,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Archivo',sans-serif;
+    background:var(--areia);
+    color:var(--tinta);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* ====== HERO ====== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:linear-gradient(180deg,#0a4d54 0%,#0e6b73 38%,#1a8a86 60%,#f2a541 88%,#e8623c 100%);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:clamp(24px,6vw,80px);
+    overflow:hidden;
+  }
+  .sun{
+    position:absolute;
+    width:min(46vw,360px);height:min(46vw,360px);
+    border-radius:50%;
+    background:radial-gradient(circle at 50% 50%,#fff4dc 0%,#f8c659 45%,#f2a541 100%);
+    right:8%;top:46%;
+    box-shadow:0 0 120px 40px rgba(242,165,65,.5);
+    animation:rise 2.4s cubic-bezier(.16,1,.3,1) both;
+  }
+  @keyframes rise{from{transform:translateY(120px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .waves{position:absolute;bottom:0;left:0;width:100%;line-height:0;opacity:.9}
+  .hero-content{position:relative;z-index:2;max-width:920px}
+  .eyebrow{
+    font-family:'Archivo Narrow',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.32em;
+    font-size:clamp(11px,1.4vw,14px);
+    color:var(--areia);
+    font-weight:600;
+    margin-bottom:18px;
+    display:flex;gap:14px;align-items:center;
+  }
+  .eyebrow::before{content:"";width:42px;height:1px;background:var(--areia);display:inline-block}
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(40px,8.5vw,108px);
+    line-height:.95;
+    color:var(--branco);
+    letter-spacing:-.02em;
+    text-wrap:balance;
+  }
+  h1 em{font-style:italic;color:#ffe6b0}
+  .hero-sub{
+    margin-top:26px;
+    font-size:clamp(16px,2.1vw,21px);
+    color:var(--areia);
+    max-width:560px;
+    font-weight:400;
+  }
+  .hero-meta{
+    margin-top:38px;
+    display:flex;flex-wrap:wrap;gap:12px;
+  }
+  .chip{
+    background:rgba(255,253,248,.16);
+    border:1px solid rgba(255,253,248,.3);
+    backdrop-filter:blur(4px);
+    color:var(--branco);
+    padding:9px 16px;
+    border-radius:100px;
+    font-size:14px;font-weight:500;
+    display:flex;align-items:center;gap:7px;
+  }
+
+  /* ====== INTRO NOTE ====== */
+  .note{
+    background:var(--branco);
+    margin:0 auto;
+    max-width:1180px;
+    padding:clamp(28px,4vw,48px);
+    border-radius:22px;
+    box-shadow:0 18px 50px var(--sombra);
+    transform:translateY(-60px);
+    position:relative;z-index:3;
+  }
+  .note h2{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(22px,3vw,30px);
+    margin-bottom:12px;color:var(--mar-fundo);
+  }
+  .note p{color:var(--tinta-suave);font-size:clamp(15px,1.7vw,17px);max-width:760px}
+  .note p + p{margin-top:12px}
+
+  /* ====== SECTION WRAP ====== */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+  .section-head{margin:clamp(40px,6vw,72px) 0 clamp(20px,3vw,32px)}
+  .section-head .eyebrow{color:var(--coral)}
+  .section-head .eyebrow::before{background:var(--coral)}
+  .section-head h2{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(28px,4.4vw,46px);
+    color:var(--tinta);letter-spacing:-.02em;line-height:1.02;
+  }
+  .section-head p{margin-top:12px;color:var(--tinta-suave);max-width:720px;font-size:clamp(15px,1.7vw,17px)}
+
+  /* ====== TIMELINE / DAYS ====== */
+  .legend{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:34px}
+  .legend span{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--tinta-suave)}
+  .dot{width:13px;height:13px;border-radius:50%}
+  .d-jp{background:var(--mar)}
+  .d-pipa{background:var(--coral)}
+  .d-natal{background:var(--por-do-sol)}
+  .d-travel{background:#9aa6a3}
+
+  .days{display:flex;flex-direction:column;gap:16px}
+  .day{
+    background:var(--branco);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 6px 20px var(--sombra);
+    border-left:6px solid var(--mar);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .day.pipa{border-left-color:var(--coral)}
+  .day.natal{border-left-color:var(--por-do-sol)}
+  .day.travel{border-left-color:#9aa6a3}
+  .day-btn{
+    width:100%;border:none;background:none;cursor:pointer;
+    display:flex;align-items:center;gap:clamp(14px,2.5vw,26px);
+    padding:clamp(16px,2.4vw,24px) clamp(18px,2.8vw,28px);
+    text-align:left;font-family:inherit;
+  }
+  .day-btn:hover{background:#faf6ee}
+  .daynum{
+    flex-shrink:0;
+    width:clamp(52px,7vw,66px);height:clamp(52px,7vw,66px);
+    border-radius:14px;
+    background:var(--areia-2);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    line-height:1;
+  }
+  .daynum .dd{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(20px,3vw,26px);color:var(--mar-fundo)}
+  .daynum .wd{font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;font-size:10.5px;letter-spacing:.1em;color:var(--tinta-suave);margin-top:3px}
+  .day.pipa .daynum{background:#fbe0d6}
+  .day.pipa .daynum .dd{color:var(--coral)}
+  .day.natal .daynum{background:#fceccf}
+  .day.natal .daynum .dd{color:#c47e16}
+  .day-info{flex:1;min-width:0}
+  .day-loc{
+    font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;
+    letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--coral);margin-bottom:3px;
+  }
+  .day.jp .day-loc{color:var(--mar)}
+  .day.natal .day-loc{color:#c47e16}
+  .day.travel .day-loc{color:#7c8784}
+  .day-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(17px,2.3vw,22px);color:var(--tinta);line-height:1.15}
+  .day-tease{font-size:13.5px;color:var(--tinta-suave);margin-top:4px;display:none}
+  .chev{flex-shrink:0;transition:transform .3s ease;color:var(--tinta-suave)}
+  .day.open .chev{transform:rotate(180deg)}
+  .day-body{
+    max-height:0;overflow:hidden;
+    transition:max-height .45s cubic-bezier(.4,0,.2,1);
+  }
+  .day-body-inner{padding:0 clamp(18px,2.8vw,28px) clamp(20px,2.8vw,28px) clamp(18px,2.8vw,28px)}
+  .day-body-inner .divider{height:1px;background:var(--areia-2);margin:0 0 18px}
+  .block{margin-bottom:16px}
+  .block:last-child{margin-bottom:0}
+  .block h4{
+    font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;letter-spacing:.12em;
+    font-size:12.5px;color:var(--mar-fundo);font-weight:700;margin-bottom:6px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .block p{font-size:15px;color:var(--tinta-suave)}
+  .block p strong{color:var(--tinta);font-weight:600}
+  .tag{
+    display:inline-block;background:var(--areia);border-radius:7px;
+    padding:2px 9px;font-size:12.5px;font-weight:600;color:var(--mar-fundo);
+    margin:2px 4px 2px 0;
+  }
+  .tag.money{background:#e7f0ee;color:var(--mar-fundo)}
+  .highlight-box{
+    background:linear-gradient(100deg,#fff4e4,#ffe9d6);
+    border-radius:12px;padding:14px 16px;margin-top:6px;
+    border:1px dashed var(--por-do-sol);
+  }
+  .highlight-box .lbl{font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:11px;font-weight:700;color:var(--coral)}
+  .highlight-box p{color:var(--tinta);font-size:14.5px;margin-top:3px}
+
+  /* ====== CARDS GRID (hostels etc) ====== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  .card{
+    background:var(--branco);border-radius:16px;padding:22px;
+    box-shadow:0 6px 18px var(--sombra);
+    border-top:4px solid var(--mar);
+    display:flex;flex-direction:column;
+  }
+  .card.coral{border-top-color:var(--coral)}
+  .card.sun{border-top-color:var(--por-do-sol)}
+  .card .kicker{font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;font-weight:700;color:var(--mar);margin-bottom:7px}
+  .card.coral .kicker{color:var(--coral)}
+  .card.sun .kicker{color:#c47e16}
+  .card h3{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--tinta);margin-bottom:8px;line-height:1.1}
+  .card p{font-size:14px;color:var(--tinta-suave);flex:1}
+  .card .price{margin-top:12px;font-weight:700;color:var(--mar-fundo);font-size:15px}
+  .card .price small{font-weight:500;color:var(--tinta-suave);font-size:12.5px}
+
+  /* ====== FUTEBOL BANNER ====== */
+  .match{
+    background:linear-gradient(115deg,var(--mar-fundo),var(--mar));
+    border-radius:22px;padding:clamp(26px,4vw,44px);color:var(--branco);
+    position:relative;overflow:hidden;
+    box-shadow:0 16px 40px rgba(10,77,84,.35);
+  }
+  .match::after{
+    content:"⚽";position:absolute;right:-20px;bottom:-30px;
+    font-size:160px;opacity:.08;transform:rotate(-12deg);
+  }
+  .match .ribbon{display:inline-block;background:var(--coral);color:#fff;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:16px}
+  .match h3{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,40px);line-height:1.05;margin-bottom:10px}
+  .match h3 em{font-style:italic;color:#ffe6b0}
+  .match p{color:var(--areia);max-width:560px;font-size:15.5px}
+  .match .info{display:flex;flex-wrap:wrap;gap:22px;margin-top:22px}
+  .match .info div{font-size:14px}
+  .match .info .v{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:#fff}
+  .match .info .k{color:var(--areia);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+
+  /* ====== BUDGET ====== */
+  .budget{
+    background:var(--branco);border-radius:20px;padding:clamp(24px,3.5vw,40px);
+    box-shadow:0 8px 24px var(--sombra);
+  }
+  .budget table{width:100%;border-collapse:collapse}
+  .budget th,.budget td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--areia-2);font-size:14.5px}
+  .budget th{font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--mar);font-weight:700}
+  .budget td:last-child,.budget th:last-child{text-align:right;font-weight:600;color:var(--tinta);white-space:nowrap}
+  .budget td:first-child{color:var(--tinta-suave)}
+  .budget tr.total td{border-bottom:none;border-top:2px solid var(--mar-fundo);padding-top:14px;font-family:'Fraunces',serif;font-weight:700;font-size:17px;color:var(--mar-fundo)}
+  .budget .disc{margin-top:14px;font-size:13px;color:var(--tinta-suave);font-style:italic}
+
+  /* ====== SAFETY / TIPS ====== */
+  .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+  .tip{background:var(--branco);border-radius:14px;padding:20px;box-shadow:0 5px 16px var(--sombra)}
+  .tip .ic{font-size:24px;margin-bottom:10px;display:block}
+  .tip h4{font-family:'Fraunces',serif;font-weight:600;font-size:17px;margin-bottom:6px;color:var(--tinta)}
+  .tip p{font-size:14px;color:var(--tinta-suave)}
+
+  /* ====== FOOTER ====== */
+  footer{
+    background:var(--mar-fundo);color:var(--areia);
+    margin-top:clamp(48px,7vw,90px);
+    padding:clamp(40px,6vw,72px) clamp(20px,4vw,40px);
+    text-align:center;
+  }
+  footer .eyebrow{justify-content:center;color:var(--por-do-sol)}
+  footer .eyebrow::before{display:none}
+  footer h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,40px);color:var(--branco);margin-bottom:14px;line-height:1.1}
+  footer p{max-width:540px;margin:0 auto;color:var(--areia);opacity:.85;font-size:15px}
+  footer .small{margin-top:28px;font-size:12.5px;opacity:.6}
+
+  /* ====== RESPONSIVE ====== */
+  @media(max-width:640px){
+    .day-btn{gap:14px}
+    .hero-meta{gap:8px}
+    .chip{font-size:12.5px;padding:7px 12px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .sun{animation:none}
+    *{transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="sun"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Roteiro solo · 18 a 30 de agosto de 2026</div>
+    <h1>Onde o sol<br>nasce <em>primeiro</em></h1>
+    <p class="hero-sub">Doze dias entre a Paraíba e o Rio Grande do Norte. Praias de água morna, falésias alaranjadas, hostels cheios de gente boa e o agito de Pipa no fim de semana — saindo e voltando para Belo Horizonte.</p>
+    <div class="hero-meta">
+      <span class="chip">🛫 BH → João Pessoa</span>
+      <span class="chip">🏖️ Pipa · Natal · JP</span>
+      <span class="chip">⚽ Botafogo-PB no Almeidão</span>
+      <span class="chip">🎒 Hostels sociais</span>
+    </div>
+  </div>
+  <div class="waves">
+    <svg viewBox="0 0 1440 110" preserveAspectRatio="none" width="100%" height="90"><path fill="#f3ead8" d="M0,40 C240,90 480,10 720,40 C960,70 1200,20 1440,50 L1440,110 L0,110 Z"></path></svg>
+  </div>
+</header>
+
+<!-- INTRO NOTE -->
+<div class="note">
+  <h2>A lógica do roteiro</h2>
+  <p>A ideia é <strong>chegar em João Pessoa e sair direto pegando estrada para o sul</strong>, descendo o litoral até Pipa enquanto você ainda está cheia de energia. Pipa fica reservada para o <strong>fim de semana</strong> (sexta a domingo, 21–23/ago), que é quando a vila ferve. Depois você sobe para Natal, e só no finalzinho volta para João Pessoa, onde a viagem desacelera — e onde, num feliz acaso, o <strong>Botafogo-PB joga em casa no sábado 22</strong>. Como esse sábado cai dentro do trecho de Pipa, deixei o jogo como uma escolha sua: dá pra encaixar, e explico como no card do futebol.</p>
+  <p>Todos os preços são <strong>médias de 2026 por pessoa</strong> e servem de bússola, não de promessa — passagem, hospedagem e passeio variam com antecedência e temporada. Toque em cada dia para abrir os detalhes.</p>
+</div>
+
+<!-- ROTEIRO DIA A DIA -->
+<section class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">Dia a dia</div>
+    <h2>Os doze dias, abertos um a um</h2>
+    <p>Um roteiro com respiro: dias de praia intensa intercalados com manhãs preguiçosas. Toque para expandir.</p>
+  </div>
+
+  <div class="legend">
+    <span><i class="dot d-jp"></i>João Pessoa</span>
+    <span><i class="dot d-pipa"></i>Pipa</span>
+    <span><i class="dot d-natal"></i>Natal</span>
+    <span><i class="dot d-travel"></i>Deslocamento</span>
+  </div>
+
+  <div class="days" id="days"></div>
+</section>
+
+<!-- FUTEBOL -->
+<section class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">Para a torcedora</div>
+    <h2>Tem jogo do Belo na cidade</h2>
+  </div>
+  <div class="match">
+    <span class="ribbon">Sábado · 22 de agosto · 2026</span>
+    <h3>Botafogo-PB <em>×</em> Guarani-SP</h3>
+    <p>Pela 18ª rodada da Série C do Brasileirão, o Botafogo-PB recebe o Guarani no <strong>Estádio Almeidão</strong>, em João Pessoa. A torcida do Belo é uma das mais quentes do Nordeste e o ingresso de Série C é baratinho. O detalhe: esse sábado cai no seu fim de semana em Pipa. Se futebol fala mais alto que a balada, dá pra subir de Pipa a JP no sábado de manhã (≈3h), ver o jogo e voltar — ou rearranjar pra estar em João Pessoa nesse dia. Horário exato sai mais perto da data pela CBF.</p>
+    <div class="info">
+      <div><div class="v">Almeidão · JP</div><div class="k">Estádio</div></div>
+      <div><div class="v">R$ 40–80</div><div class="k">Ingresso médio</div></div>
+      <div><div class="v">Série C</div><div class="k">18ª rodada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSPEDAGEM -->
+<section class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">Onde dormir e fazer amizade</div>
+    <h2>Hostels com a vibe certa</h2>
+    <p>No espírito do Hostel da Vila e do Graffiti — sociais, mas seguros, com área comum boa pra conhecer gente. Reserve com antecedência: agosto pega o veranico nordestino.</p>
+  </div>
+  <div class="grid" id="hostels"></div>
+</section>
+
+<!-- FESTAS -->
+<section class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">O agito</div>
+    <h2>Festas, luais e música ao vivo</h2>
+    <p>A programação fechada de agosto só sai algumas semanas antes, mas a rotina da noite nesses lugares é bem previsível. Aqui está o que conta com você.</p>
+  </div>
+  <div class="grid" id="festas"></div>
+</section>
+
+<!-- ORÇAMENTO -->
+<section class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">O bolso</div>
+    <h2>Quanto custa, mais ou menos</h2>
+    <p>Estimativa para os 12 dias, num padrão mochileira confortável: dormindo em hostel, comendo bem sem exagero, fazendo os passeios principais.</p>
+  </div>
+  <div class="budget">
+    <table>
+      <thead><tr><th>Item</th><th>Estimativa (R$)</th></tr></thead>
+      <tbody id="budget-rows"></tbody>
+    </table>
+    <p class="disc">Câmbio, antecedência e escolha de quarto (compartilhado vs. privativo) mexem bastante nesses números. A passagem é o item mais volátil: comprando com 5–6 semanas de antecedência costuma cair bastante.</p>
+  </div>
+</section>
+
+<!-- SEGURANÇA -->
+<section class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">Viajando sozinha</div>
+    <h2>Para se sentir segura sem perder o gosto</h2>
+  </div>
+  <div class="tips" id="tips"></div>
+</section>
+
+<footer>
+  <div class="eyebrow">Boa viagem</div>
+  <h2>Faz essa viagem ser sua</h2>
+  <p>Este é um esqueleto generoso, não uma camisa de força. Conheceu gente legal no hostel que vai pra uma praia que você nem tinha ouvido falar? Vai. O melhor da viagem solo é exatamente o improviso que cabe entre os planos.</p>
+  <p class="small">Preços e eventos baseados em pesquisa de 2026 · valores médios por pessoa, sujeitos a variação · confirme datas de jogos e festas perto da viagem.</p>
+</footer>
+
+<script>
+/* ---------- DADOS ---------- */
+const days = [
+  {date:"18", wd:"Ter", loc:"BH → João Pessoa", cls:"jp", title:"Voo e chegada em João Pessoa",
+    blocks:[
+      {h:"✈️ Deslocamento", p:"Voo direto ou com 1 conexão de Confins (CNF) para o aeroporto Castro Pinto (JPA). Duração de ~3h direto, ou 5–6h com conexão (Recife/Salvador costumam ser as escalas mais baratas)."},
+      {h:"🚕 Do aeroporto ao hostel", p:"O aeroporto fica a ~25 km da orla. Uber/99 sai por <strong>R$ 50–80</strong>; vans compartilhadas, menos. Mire um hostel em <strong>Tambaú ou Cabo Branco</strong>, os bairros mais turísticos e seguros."},
+      {h:"🌙 Primeira noite", p:"Chegou cedo? Anda na orla de Tambaú ao pôr do sol e janta na <strong>Feirinha de Tambaú</strong>. Cansada da viagem? Só descansa — amanhã pega estrada."}
+    ],
+    hl:"João Pessoa é a cidade onde o sol nasce primeiro nas Américas. Vale acordar pra ver pelo menos um amanhecer no Cabo Branco."},
+
+  {date:"19", wd:"Qua", loc:"João Pessoa", cls:"jp", title:"Praias urbanas e piscinas naturais",
+    blocks:[
+      {h:"🏖️ Manhã", p:"Aquece com as praias urbanas: <strong>Cabo Branco</strong> e <strong>Tambaú</strong>, com o farol icônico do Cabo Branco no caminho. Água morna e calma."},
+      {h:"⛵ Passeio do dia", p:"Catamarã ou jangada até as <strong>piscinas naturais de Picãozinho ou do Seixas</strong> — recifes a poucos minutos da praia, com peixinhos. Saída da praia de Tambaú."},
+      {h:"🍤 Noite", p:"Jantar de frutos do mar em Tambaú e a primeira cerveja com a galera do hostel."}
+    ],
+    tags:["Picãozinho ~R$ 60–90","Jangada ~R$ 40"]},
+
+  {date:"20", wd:"Qui", loc:"JP → litoral sul → Pipa", cls:"travel", title:"Descida cênica para Pipa",
+    blocks:[
+      {h:"🚐 Transfer ou passeio-bate-volta convertido", p:"Pipa fica a ~150 km / 2h30–3h ao sul, já no Rio Grande do Norte. As opções: <strong>transfer privativo/compartilhado</strong> direto JP→Pipa, ou um <strong>passeio de buggy/4x4 pelo litoral</strong> que desce passando por Barra de Cunhaú, Sibaúma e praias desertas até Pipa."},
+      {h:"📍 Por que agora", p:"Chegando quinta você já dorme em Pipa e amanhece na vila pro <strong>fim de semana</strong>, que é quando ela ferve."},
+      {h:"🌅 Tarde", p:"Check-in no hostel, banho de mar na <strong>Praia do Centro</strong> e pôr do sol no <strong>Chapadão</strong>, mirante sobre a Praia do Amor."}
+    ],
+    tags:["Transfer ~R$ 120–200","Buggy litoral ~R$ 250+"]},
+
+  {date:"21", wd:"Sex", loc:"Pipa", cls:"pipa", title:"Golfinhos, Praia do Amor e a noite começa",
+    blocks:[
+      {h:"🐬 Manhã", p:"Passeio de barco pela <strong>Baía dos Golfinhos</strong> — com sorte eles aparecem do lado do barco. Dá pra fazer trilha pela praia também, na maré baixa."},
+      {h:"🏄 Tarde", p:"<strong>Praia do Amor</strong>, queridinha dos surfistas, e <strong>Praia do Madeiro</strong>, ótima pra iniciantes de surfe e pra ver tartarugas."},
+      {h:"🎶 Noite (sexta!)", p:"A <strong>Rua da Gameleira / Av. Baía dos Golfinhos</strong> concentra os bares. Reggae no <strong>Taipa Brasil</strong>, música latina, luais na praia. A noite só esquenta de verdade depois das 22h."}
+    ],
+    hl:"De quinta a domingo, as noites de Pipa são lendárias — salsa, reggae, eletrônica e luau na areia. Sexta e sábado são os pontos altos."},
+
+  {date:"22", wd:"Sáb", loc:"Pipa", cls:"pipa", title:"Dia de praia + a grande noite de Pipa",
+    blocks:[
+      {h:"☀️ Dia", p:"Dia de relaxar de verdade: praia, lagoa de Guaraíras pro pôr do sol (do lado de Tibau do Sul), ou só uma rede e um livro."},
+      {h:"🪩 Noite (o auge)", p:"Sábado é A noite. Boate dos Calangos, Bakana, Tribus — pista de dança, DJ e gente do mundo todo. Vá com a turma do hostel, é mais seguro e mais divertido."},
+      {h:"⚽ Bifurcação", p:"<strong>Se quiser o jogo do Botafogo-PB</strong> (Almeidão, hoje), suba pra JP de manhã, veja a partida à tarde e volte — ou planeje passar este sábado em João Pessoa e Pipa só sexta/domingo. Veja o card do futebol."}
+    ],
+    hl:"Coincidência da agenda: o auge da noite de Pipa e o jogo do Belo caem no mesmo sábado. Escolha o seu programa."},
+
+  {date:"23", wd:"Dom", loc:"Pipa", cls:"pipa", title:"Manhã lenta e despedida da vila",
+    blocks:[
+      {h:"🧘 Manhã", p:"Recuperação: café da manhã reforçado no hostel, talvez um mergulho calmo ou aula de surfe no Madeiro."},
+      {h:"🛍️ Tarde", p:"Volta na rua principal de dia, sem multidão — lojinhas de artesanato, sorvete, última foto no Chapadão."},
+      {h:"🌃 Domingo à noite", p:"Domingo ainda tem movimento em Pipa (luais, música ao vivo), mas mais tranquilo. Boa noite pra conversar de verdade com quem você conheceu."}
+    ]},
+
+  {date:"24", wd:"Seg", loc:"Pipa → Natal", cls:"travel", title:"Subida para Natal pelas dunas",
+    blocks:[
+      {h:"🚐 Deslocamento", p:"Pipa → Natal são ~85 km / 1h30. Transfer compartilhado ou ônibus da Viação Riograndense saindo de Tibau do Sul. Hospede-se em <strong>Ponta Negra</strong>, o bairro da praia mais animado."},
+      {h:"🏖️ Tarde", p:"Praia de <strong>Ponta Negra</strong> e o cartão-postal <strong>Morro do Careca</strong>, a duna gigante no fim da praia (não se sobe, é preservado)."},
+      {h:"🍽️ Noite", p:"Ponta Negra tem orla cheia de bares e restaurantes. Vibe de cidade grande litorânea."}
+    ],
+    tags:["Transfer ~R$ 80–150","Ônibus mais barato"]},
+
+  {date:"25", wd:"Ter", loc:"Natal", cls:"natal", title:"Buggy nas dunas de Genipabu",
+    blocks:[
+      {h:"🏜️ O passeio clássico", p:"<strong>Buggy em Genipabu</strong>, no litoral norte: dunas móveis, descidas radicais (\"com ou sem emoção?\"), lagoas pra esquibunda e aerobunda, e travessia de balsa. É o passeio mais icônico de Natal."},
+      {h:"🐪 Extras", p:"Dá pra andar de dromedário nas dunas e parar nas lagoas de Jacumã e Pitangui pra banho."},
+      {h:"🌙 Noite", p:"Volta pra Ponta Negra. Terça é mais tranquila — bom pra descansar as pernas."}
+    ],
+    tags:["Buggy ~R$ 250–350/buggy","balsa R$ 100/buggy"],
+    hl:"O buggy é vendido por veículo (até 4 pessoas), não por pessoa — então dividir com gente do hostel deixa muito mais barato."},
+
+  {date:"26", wd:"Qua", loc:"Natal", cls:"natal", title:"História, forte e o maior cajueiro do mundo",
+    blocks:[
+      {h:"🏰 Manhã", p:"<strong>Forte dos Reis Magos</strong>, na entrada da cidade, marco da fundação de Natal, com vista linda. Passe rápido pela Praia do Forte e Praia dos Artistas."},
+      {h:"🌳 Curiosidade", p:"O <strong>Maior Cajueiro do Mundo</strong>, em Pirangi, cobre uma área do tamanho de um quarteirão — um único pé. Vale a parada pela esquisitice botânica."},
+      {h:"🌅 Tarde/noite", p:"Pôr do sol no <strong>Parque das Dunas</strong> ou na orla. Última noite natalense em Ponta Negra."}
+    ]},
+
+  {date:"27", wd:"Qui", loc:"Natal → João Pessoa", cls:"travel", title:"Volta para João Pessoa",
+    blocks:[
+      {h:"🚐 Deslocamento", p:"Natal → João Pessoa são ~185 km / 3h. Ônibus rodoviário (vários por dia) ou transfer. Agora você fecha o circuito e curte JP com calma, já craque na região."},
+      {h:"🏨 Base", p:"Volte pra um hostel em Tambaú/Cabo Branco. Tarde livre pra reencontrar a orla que você só provou no começo."},
+      {h:"🌆 Noite", p:"Bares da orla de Tambaú e Manaíra; quarta a sábado a cidade tem boa música ao vivo."}
+    ],
+    tags:["Ônibus ~R$ 60–100"]},
+
+  {date:"28", wd:"Sex", loc:"João Pessoa", cls:"jp", title:"Centro histórico e pôr do sol no rio",
+    blocks:[
+      {h:"🏛️ Manhã", p:"<strong>Centro Histórico</strong>: Igreja de São Francisco (uma das mais bonitas do Brasil barroco), ladeiras coloridas e o casario antigo."},
+      {h:"🌅 Fim de tarde", p:"O ritual pessoense: pôr do sol na <strong>Estação Cabo Branco</strong> ou no <strong>Jacaré</strong>, onde um saxofonista toca o Bolero de Ravel enquanto o sol some no rio. Clichê? Sim. Lindo? Também."},
+      {h:"🎉 Noite (sexta)", p:"Última sexta da viagem. Bares de Tambaú, música ao vivo, despedida com a galera nova."}
+    ],
+    hl:"O pôr do sol do Jacaré ao som do Bolero de Ravel é uma tradição local — chega cedo pra pegar lugar."},
+
+  {date:"29", wd:"Sáb", loc:"João Pessoa", cls:"jp", title:"Ponta dos Seixas e dia livre",
+    blocks:[
+      {h:"🧭 Manhã", p:"<strong>Ponta dos Seixas</strong> — o ponto mais oriental das Américas, o lugar onde o continente vê o sol primeiro. Marco geográfico com vista pro mar."},
+      {h:"🏖️ Tarde livre", p:"Coringa do roteiro: repita a praia favorita, faça um passeio que ficou pra trás, ou só não faça nada. Você merece."},
+      {h:"💃 Noite", p:"Sábado em JP tem agito — bares e casas em Manaíra e Tambaú. Última grande noite."}
+    ]},
+
+  {date:"30", wd:"Dom", loc:"João Pessoa → BH", cls:"travel", title:"Último amanhecer e voo de volta",
+    blocks:[
+      {h:"🌅 De manhã", p:"Se o voo deixar, um último amanhecer no Cabo Branco — fechar a viagem onde o sol nasce primeiro tem seu charme."},
+      {h:"✈️ Volta", p:"Transfer pro aeroporto Castro Pinto (~25 km) e voo de volta pra Confins. Mala mais pesada de areia e histórias."},
+      {h:"💛 Fim", p:"Doze dias, três cidades, um litoral inteiro. Bem-vinda de volta."}
+    ]}
+];
+
+const hostels = [
+  {cls:"", k:"João Pessoa · Tambaú", n:"Hostels da orla de Tambaú", d:"Cabo Branco e Tambaú concentram os hostels mais sociais e bem localizados, a poucos minutos da praia. Opções como Slow Hostel (criativo, com café da manhã elogiado) e Manaíra Hostel aparecem bem nas avaliações de mochileiros.", price:"R$ 60–120 <small>/ noite (dorm)</small>"},
+  {cls:"coral", k:"Pipa · Centro", n:"Pipa Surf House & Lagarto na Banana", d:"Pipa é feita pra isso. A Pipa Surf House é uma casa social com música ao vivo, jam sessions e cultura de surfe — ótima pra quem viaja sozinha. Lagarto na Banana tem piscina e clima de comunidade. Tudo a pé do centro e da noite.", price:"R$ 70–140 <small>/ noite (dorm)</small>"},
+  {cls:"sun", k:"Natal · Ponta Negra", n:"Hostels de Ponta Negra", d:"Ponta Negra é o bairro pra ficar: praia animada, orla com bares e fácil de sair pros passeios de buggy. Vários hostels sociais com bom custo-benefício na faixa de areia e nas ruas próximas.", price:"R$ 55–110 <small>/ noite (dorm)</small>"}
+];
+
+const festas = [
+  {cls:"coral", k:"Pipa · Sex a Dom", n:"A noite da vila", d:"O coração do agito. Boate dos Calangos, Bakana e Tribus pras pistas de dança; Taipa Brasil pro reggae (terças e na programação); luais e música ao vivo na praia. Sexta e sábado são o auge — exatamente o seu fim de semana lá."},
+  {cls:"", k:"João Pessoa · Qua a Sáb", n:"Bares e música ao vivo", d:"A cena de JP é mais de bar com banda do que de balada gigante. Tambaú e Manaíra têm boas casas com MPB, forró e rock ao vivo. Confira Sympla e o guia Viva João Pessoa perto da data pra shows pontuais."},
+  {cls:"sun", k:"Natal · Ponta Negra", n:"Orla de Ponta Negra", d:"Bares à beira-mar, forró e casas noturnas concentrados em Ponta Negra. Menos intenso que Pipa, mas com noites movimentadas, sobretudo no fim de semana."}
+];
+
+const budget = [
+  ["Passagem aérea ida e volta BH–JP","800 – 1.300"],
+  ["Hospedagem · 12 noites em hostel","800 – 1.500"],
+  ["Transfers entre cidades (JP–Pipa–Natal–JP)","350 – 600"],
+  ["Passeios (golfinhos, buggy, piscinas, etc.)","500 – 800"],
+  ["Alimentação · 12 dias","700 – 1.200"],
+  ["Festas, ingressos e extras","300 – 600"],
+  ["Transporte urbano / Uber","150 – 300"]
+];
+const budgetTotal = "≈ 3.600 – 6.300";
+
+const tips = [
+  {ic:"🧍‍♀️", h:"Hostel é seu aliado", p:"Sozinha, o hostel social resolve metade da segurança: você sai pra balada e passeios em grupo, divide buggy e transfer, e tem gente que sabe seu paradeiro."},
+  {ic:"🌙", h:"Volte acompanhada à noite", p:"Em Pipa as baladas vão até de madrugada. Combine de voltar com gente do hostel e prefira ruas movimentadas. Uber é escasso em Pipa — táxi ou a pé em grupo."},
+  {ic:"📱", h:"Compartilhe localização", p:"Deixe alguém de confiança com sua localização ao vivo e a agenda do dia. Em passeios, salve o contato do hostel e da agência."},
+  {ic:"💰", h:"Divida o dinheiro", p:"Não ande com tudo num lugar só. Use cartão quando der, leve um troco em espécie e deixe o resto no cofre do hostel."},
+  {ic:"☀️", h:"Sol nordestino é traiçoeiro", p:"Protetor reforçado, água sempre, e cuidado com o sol mesmo nublado. O calor de agosto é gostoso mas desidrata."},
+  {ic:"🐢", h:"Respeite a natureza", p:"No Madeiro e na Baía dos Golfinhos, não toque em tartarugas nem golfinhos e siga as regras dos guias. É área de preservação."}
+];
+
+/* ---------- RENDER ---------- */
+const daysEl = document.getElementById('days');
+days.forEach((d,i)=>{
+  const blocksHTML = d.blocks.map(b=>`<div class="block"><h4>${b.h}</h4><p>${b.p}</p></div>`).join('');
+  const tagsHTML = d.tags ? `<div class="block">${d.tags.map(t=>`<span class="tag money">${t}</span>`).join('')}</div>` : '';
+  const hlHTML = d.hl ? `<div class="highlight-box"><span class="lbl">Dica de ouro</span><p>${d.hl}</p></div>` : '';
+  const el = document.createElement('div');
+  el.className = `day ${d.cls}`;
+  el.innerHTML = `
+    <button class="day-btn" aria-expanded="false">
+      <span class="daynum"><span class="dd">${d.date}</span><span class="wd">${d.wd}</span></span>
+      <span class="day-info">
+        <span class="day-loc">${d.loc}</span>
+        <span class="day-title">${d.title}</span>
+      </span>
+      <svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="day-body">
+      <div class="day-body-inner">
+        <div class="divider"></div>
+        ${blocksHTML}
+        ${tagsHTML}
+        ${hlHTML}
+      </div>
+    </div>`;
+  daysEl.appendChild(el);
+
+  const btn = el.querySelector('.day-btn');
+  const body = el.querySelector('.day-body');
+  btn.addEventListener('click', ()=>{
+    const open = el.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    body.style.maxHeight = open ? body.scrollHeight + 'px' : '0';
+  });
+});
+
+const hostelsEl = document.getElementById('hostels');
+hostels.forEach(h=>{
+  const el = document.createElement('div');
+  el.className = `card ${h.cls}`;
+  el.innerHTML = `<span class="kicker">${h.k}</span><h3>${h.n}</h3><p>${h.d}</p><div class="price">${h.price}</div>`;
+  hostelsEl.appendChild(el);
+});
+
+const festasEl = document.getElementById('festas');
+festas.forEach(f=>{
+  const el = document.createElement('div');
+  el.className = `card ${f.cls}`;
+  el.innerHTML = `<span class="kicker">${f.k}</span><h3>${f.n}</h3><p>${f.d}</p>`;
+  festasEl.appendChild(el);
+});
+
+const budgetRows = document.getElementById('budget-rows');
+budget.forEach(r=>{
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td>${r[0]}</td><td>R$ ${r[1]}</td>`;
+  budgetRows.appendChild(tr);
+});
+const totalRow = document.createElement('tr');
+totalRow.className = 'total';
+totalRow.innerHTML = `<td>Total estimado · 12 dias</td><td>R$ ${budgetTotal}</td>`;
+budgetRows.appendChild(totalRow);
+
+const tipsEl = document.getElementById('tips');
+tips.forEach(t=>{
+  const el = document.createElement('div');
+  el.className = 'tip';
+  el.innerHTML = `<span class="ic">${t.ic}</span><h4>${t.h}</h4><p>${t.p}</p>`;
+  tipsEl.appendChild(el);
+});
+</script>
+</body>
+</html>
