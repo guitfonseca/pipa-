@@ -213,21 +213,33 @@
   .highlight-box .lbl{font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:11px;font-weight:700;color:var(--coral)}
   .highlight-box p{color:var(--tinta);font-size:14.5px;margin-top:3px}
 
-  /* ====== CARDS GRID (hostels etc) ====== */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  /* ====== CARDS — empilhados, um abaixo do outro (v4) ====== */
+  .grid{display:block !important}
+  .grid > *{
+    display:block !important;
+    position:static !important;
+    float:none !important;
+    width:100% !important;
+    max-width:100% !important;
+    left:auto !important;right:auto !important;top:auto !important;
+    transform:none !important;
+    margin-left:0 !important;margin-right:0 !important;
+  }
   .card{
+    width:100%;
+    margin-bottom:16px;
     background:var(--branco);border-radius:16px;padding:22px;
     box-shadow:0 6px 18px var(--sombra);
     border-top:4px solid var(--mar);
-    display:flex;flex-direction:column;
   }
+  .card:last-child{margin-bottom:0}
   .card.coral{border-top-color:var(--coral)}
   .card.sun{border-top-color:var(--por-do-sol)}
   .card .kicker{font-family:'Archivo Narrow',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;font-weight:700;color:var(--mar);margin-bottom:7px}
   .card.coral .kicker{color:var(--coral)}
   .card.sun .kicker{color:#c47e16}
   .card h3{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--tinta);margin-bottom:8px;line-height:1.1}
-  .card p{font-size:14px;color:var(--tinta-suave);flex:1}
+  .card p{font-size:14px;color:var(--tinta-suave)}
   .card .price{margin-top:12px;font-weight:700;color:var(--mar-fundo);font-size:15px}
   .card .price small{font-weight:500;color:var(--tinta-suave);font-size:12.5px}
 
@@ -265,8 +277,9 @@
   .budget .disc{margin-top:14px;font-size:13px;color:var(--tinta-suave);font-style:italic}
 
   /* ====== SAFETY / TIPS ====== */
-  .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-  .tip{background:var(--branco);border-radius:14px;padding:20px;box-shadow:0 5px 16px var(--sombra)}
+  .tips{display:block}
+  .tip{width:100%;margin-bottom:16px;background:var(--branco);border-radius:14px;padding:20px;box-shadow:0 5px 16px var(--sombra)}
+  .tip:last-child{margin-bottom:0}
   .tip .ic{font-size:24px;margin-bottom:10px;display:block}
   .tip h4{font-family:'Fraunces',serif;font-weight:600;font-size:17px;margin-bottom:6px;color:var(--tinta)}
   .tip p{font-size:14px;color:var(--tinta-suave)}
@@ -302,7 +315,7 @@
 <header class="hero">
   <div class="sun"></div>
   <div class="hero-content">
-    <div class="eyebrow">Roteiro solo · 18 a 30 de agosto de 2026</div>
+    <div class="eyebrow">Roteiro solo · 18 a 30 de agosto de 2026 · v4</div>
     <h1>Onde o sol<br>nasce <em>primeiro</em></h1>
     <p class="hero-sub">Doze dias entre a Paraíba e o Rio Grande do Norte. Praias de água morna, falésias alaranjadas, hostels cheios de gente boa e o agito de Pipa no fim de semana — saindo e voltando para Belo Horizonte.</p>
     <div class="hero-meta">
